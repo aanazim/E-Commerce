@@ -10,14 +10,14 @@
                                           
                                             <img src="{{asset('product/'.$product->image)}}" alt="" >
                                             <h2>{{$product->price}} TK</h2>
-                                            <p>{{$product->name}}</p>
+                                          <p>{{$product->name}}</p> 
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                           
                                         </div>
                                         <div class="product-overlay">
                                             <div class="overlay-content">
                                                 <h2>{{$product->price}} TK</h2>
-                                                <p>{{$product->name}}</p>
+                                                 <a style="text-decoration: none;"href="{{route('product.details',$product->id)}}"><p>{{$product->name}}</p></a>
                                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                             </div>
                                         </div>

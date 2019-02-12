@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 
 
+use App\Category;
+use App\Manufacture;
 use App\Product;
 use Brian2694\Toastr\Facades\Toastr;
 use File;
@@ -229,5 +231,14 @@ class ProductController extends Controller
 
         Toastr::success('Status Updated Successfully', 'Success');
         return redirect()->back();
+    }
+
+    public function details ($id){
+
+      
+      $products = Product::find($id);
+     
+    
+      return view ('pages.details',compact('products'));
     }
 }

@@ -32,6 +32,7 @@ Route::get('/manufacture/{manufacture}','ManufactureController@post')->name('man
 
 Route::resource('/rate','ProductController');
 Route::put('status/{id}', 'ProductController@status')->name('status.approved');
+Route::get('details/{id}', 'ProductController@details')->name('product.details');
 Route::put('cstatus/{id}', 'CategoryController@status')->name('cstatus.approved');
 Route::put('mstatus/{id}', 'ManufactureController@status')->name('mstatus.approved');
 Route::put('sstatus/{id}', 'MySliderController@status')->name('sstatus.approved');
