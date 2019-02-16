@@ -99,16 +99,20 @@
 
 								
 								
-								<!-- <span>
+								 <span>
+								 	<form action="{{route('add-to-cart.store')}}" method="post">
+								 		@csrf
 									<span>US $59</span>
 									<label>Quantity:</label>
-									<input type="text" value="3" />
-									<button type="button" class="btn btn-fefault cart">
+									<input name="qty" type="text" value="1" />
+									<input  name="product_id" type="hidden" value="{{$products->id}}">
+									<button type="submit" class="btn btn-fefault cart" style="margin-top: 20px;">
 										<i class="fa fa-shopping-cart"></i>
 										Add to cart
 									</button>
+									</form>
 								</span>
-								<p><b>Availability:</b> In Stock</p>
+								<!--<p><b>Availability:</b> In Stock</p>
 								<p><b>Condition:</b> New</p>
 								<p><b>Brand:</b> E-SHOPPER</p>
 								<a href=""><img src="images/product-details/share.png" class="share img-responsive"  alt="" /></a> -->

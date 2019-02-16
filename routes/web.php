@@ -12,7 +12,7 @@
 */
 /*FRONTEND*/
 Route::get('/','HomeController@index')->name('layout');
-
+Route::resource('/add-to-cart','CartController');
 
 
 
@@ -20,7 +20,7 @@ Route::get('/','HomeController@index')->name('layout');
 /*BACKEND*/
 Route::get('admin/','AdminController@index')->name('admin');
 
-Route::get('dashboard/','AdminSuperController@dashboard')->name('dashboard');
+Route::get('dashboard/','AdminSuperController@index')->name('dashboard');
 Route::post('admin_login/','AdminController@admin_login')->name('admin_login');
 
 Route::get('logout','AdminSuperController@logout')->name('logout');

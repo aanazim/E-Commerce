@@ -18,14 +18,14 @@
                                             <div class="overlay-content">
                                                 <h2>{{$product->price}} TK</h2>
                                                  <a style="text-decoration: none;"href="{{route('product.details',$product->id)}}"><p>{{$product->name}}</p></a>
-                                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                <a href="{{route('product.details',$product->id)}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                             </div>
                                         </div>
                                 </div>
                                 <div class="choose">
                                     <ul class="nav nav-pills nav-justified">
-                                        <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-                                        <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+                                        <li><a href="{{route('product.details',$product->id)}}"><i class="fa fa-plus-square"></i>{{$product->name}}</a></li>
+                                        <li><a href="{{route('product.details',$product->id)}}"><i class="fa fa-plus-square"></i>View Product</a></li>
                                     </ul>
                                 </div>
                             </div>

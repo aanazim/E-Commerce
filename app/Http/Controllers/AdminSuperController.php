@@ -11,8 +11,8 @@ use Illuminate\Support\Facades\Session;
 class AdminSuperController extends Controller
 {
 
-    public function dashboard(){
-	    /* $this->AdminAuthCheck();*/
+    public function index(){
+	     $this->AdminAuthCheck();
 	     return view('admin.dashboard');
     }
 
@@ -24,7 +24,7 @@ class AdminSuperController extends Controller
     return Redirect::to('admin');
 	}
     
-    /*public function AdminAuthCheck(){
+    public function AdminAuthCheck(){
          $id = Session::get('id');
 
     	if($id){
@@ -34,5 +34,5 @@ class AdminSuperController extends Controller
            return Redirect::to('/admin')->send();
     	}
     }
-*/
+
 }

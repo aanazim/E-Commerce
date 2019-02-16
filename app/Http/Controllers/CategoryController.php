@@ -19,8 +19,8 @@ class CategoryController extends Controller
 
     public function index()
     {
-        
         $categories = Category::all();
+        $this->AdminAuthCheck();
         return view ('category.index',compact('categories')) ; 
      }
     /**
@@ -155,7 +155,16 @@ class CategoryController extends Controller
 
 
 
+      public function AdminAuthCheck(){
+           $id = Session::get('id');
 
+        if($id){
+            return true;
+        }
+        else{
+             return Redirect::to('/admin')->send();
+        }
+      }
    
 
 }      

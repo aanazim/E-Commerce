@@ -6,7 +6,8 @@ use App\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
-Session_start();
+
+session_start();
 class AdminController extends Controller
 {
     public function index (){
@@ -21,8 +22,8 @@ class AdminController extends Controller
              'password' => 'required|min:6',
 
       ],[
-      	'name.required' => 'Please Insert a Name',
-      	'password.required' => 'Please Insert a Password'
+      	'email.required' => 'Please Insert a Email',
+      	'password.required' => 'Please Insert a Password',
       ]
   );
 
@@ -34,21 +35,22 @@ class AdminController extends Controller
       $admin->password = $request->password;
       $admin->save();
 
-/*
+
       if($admin){
-        Session::put('name',$request->name);
-         Session::put('phone',$request->phone);
-        Session::put('id',$request->id);
-         return Redirect::to ('dashboard/');
+        Session::put('name', $request->name);
+        Session::put('phone', $request->phone);
+        Session::put('id', $request->id);
+         return view ('admin.dashboard');
       }else{
         Session::put('message','Email or Password invalid');
-        return Redirect::to('admin');
-      }*/
+        return Redirect()->route('admin');
+      }
+
+     /* return view('admin.dashboard');*/
 
 
-     
- 
 
+         
 
     }
 
