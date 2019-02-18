@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
 
-
+use App\Http\Controllers\Controller;
 use App\Category;
 use App\Manufacture;
 use App\Product;

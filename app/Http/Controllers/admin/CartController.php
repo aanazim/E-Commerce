@@ -1,9 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\admin;
+use App\Http\Controllers\Controller;
+use App\Category;
 use App\Product;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class CartController extends Controller
 {
@@ -14,7 +17,9 @@ class CartController extends Controller
      */
     public function index()
     {
-        return view ('pages.add-to-cart');
+        $categories = Category::where('status',1)->get();
+        $products = Product::where('status',1)->get();
+        return view ('pages.add-to-cart',compact('products', 'categories'));
     }
 
     /**
@@ -37,7 +42,21 @@ class CartController extends Controller
     {    
         $qty = $request->qty;
         $product_id = $request->product_id;
-       $product_info = Product::find($product_id);
+        $product_info = Product::find($product_id);
+
+       /*$data['qty']=$request->qty;
+       $data['id']=$product_info->product_id;
+       $data['name']=$product_info->name;
+       $data['price']=$product_info->price;
+       $data['options']['image']=$product_info->image;*/
+       Cart::add($product_info->id, $product_info->name, $qty, $product_info->price, [
+            'image' => $product_info->image,
+       ]);
+       // return 'Successfull';
+       // return Cart::add($data);
+       return  redirect()->route('add-to-cart.index');
+
+      
     }
 
     /**
@@ -46,9 +65,14 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
+    public function show($rowId)
+    {  
+
+         
+      Cart::update($rowId,0);
+    return  redirect()->route('add-to-cart.index');
+          
+       
     }
 
     /**
@@ -69,9 +93,14 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$rowId)
     {
-        //
+         $qty = $request->qty;
+      
+         Cart::update($rowId, $qty);
+
+      return  redirect()->route('add-to-cart.index');
+
     }
 
     /**

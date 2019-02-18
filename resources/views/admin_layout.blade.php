@@ -316,9 +316,9 @@
 								<i class="halflings-icon white user"></i> 
                                      
 								@php 
-									$user = App\Admin::find(3);
+									$user = App\Admin::find(1);
 								@endphp
-								<span>{{ $user->name }}</span>
+								<span></span>
 								<span class="caret"></span>
 							</a>
 							
@@ -327,7 +327,21 @@
  									<span>Account Settings</span>
 								</li>
 								<li><a href=""><i class="halflings-icon user"></i> Profile</a></li>
-								<li><a href="{{route('logout')}}"><i class="halflings-icon off"></i> Logout</a></li>
+								<li>
+
+									<!-- <a href="{{route('logout')}}"><i class="halflings-icon off"></i> Logout</a> -->
+
+									<a class="dropdown-item" href="{{ route('logout') }}"
+									   onclick="event.preventDefault();
+									                 document.getElementById('logout-form').submit();">
+									    {{ __('Logout') }}
+									</a>
+
+									<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+									    @csrf
+									</form>
+
+								</li>
 							</ul>
 						</li>
 						<!-- end: User Dropdown -->

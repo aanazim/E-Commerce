@@ -55,11 +55,11 @@
 										</div>
 									</div>
 									 -->
-				<div class="col-sm-9 padding-right">
+				<div class="col-sm-12 padding-right">
 					<div class="product-details"><!--product-details-->
 						<div class="col-sm-5">
 							<div class="view-product">
-								<img src="{{asset('product/'.$products->image)}}" alt="" />
+								<img src="{{ asset('product/'. $products->image)}}" alt="" class="img-fluid" />
 								
 							</div>
 							<!-- <div id="similar-product" class="carousel slide" data-ride="carousel">

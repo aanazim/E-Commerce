@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
+use App\Http\Controllers\Controller;
 use App\Category;
 use App\Product;
 use Brian2694\Toastr\Facades\Toastr;
@@ -19,8 +20,9 @@ class CategoryController extends Controller
 
     public function index()
     {
+
+
         $categories = Category::all();
-        $this->AdminAuthCheck();
         return view ('category.index',compact('categories')) ; 
      }
     /**
