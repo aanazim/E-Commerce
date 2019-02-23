@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Http\Controllers\admin;
-use App\Http\Controllers\Controller;
+namespace App\Http\Controllers;
+use App\Http\Controllers;
 use App\Category;
 use App\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;

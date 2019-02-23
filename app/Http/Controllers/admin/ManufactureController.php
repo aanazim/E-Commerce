@@ -140,12 +140,6 @@ class ManufactureController extends Controller
     }
 
 
-    public function post ($id){
-       $manufacture = Manufacture::find($id);
-
-       $manufacture_products = $manufacture->products()->where('status',1)->get();
-
-       return view ('pages.manufactureshow',compact('manufacture','manufacture_products'));
-    }
+   
 
 }

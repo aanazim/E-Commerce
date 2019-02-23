@@ -1,16 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\admin;
-use App\Http\Controllers\Controller;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Customer;
+use App\Shipping;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Redirect;
-// use session;
-session_start();
-
-class CheckoutController extends Controller
+class ShippingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +14,7 @@ class CheckoutController extends Controller
      */
     public function index()
     {
-      return view ('pages.login-check');
+        //
     }
 
     /**
@@ -29,7 +24,7 @@ class CheckoutController extends Controller
      */
     public function create()
     {
-        return view ('pages.checkout');
+        //
     }
 
     /**
@@ -40,35 +35,41 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
+        
           $this->validate($request,[
-               'name' => 'required',
                'email' => 'required|email',
-               'password' => 'required|min:6',
-               'mobile' => 'required',
-          ],
-                      [  
-                        'name.required' => 'Please Provide a Name',
-                       'email.required' => 'Please Provide a Email',
-                       'password.required' => 'Please Provide a Password',
-                       'mobile.required' => 'Please Provide a Number',
+               'first_name' => 'required',
+               'last_name' => 'required',
+               'address' => 'required',
+               'number' => 'required',
+               'city' => 'required',
+          ],    
+
+                    [  
+                        'email.required' => 'Please Provide a Email',
+                       'first_name.required' => 'Please Provide a First Name',
+                       'last_name.required' => 'Please Provide a Last Name',
+                       'address.required' => 'Please Provide a Address',
+                       'number.required' => 'Please Provide a Number',
+                       'city.required' => 'Please Provide a City',
                        
                         ]
        );
         
 
-        $checks = new Customer();
-       
-        $checks->name = $request->name;
-        $checks->email = $request->name;
-        $checks->password = $request->password;
-        $checks->mobile = $request->mobile;
-        $checks->save();
+        $shippings = new Shipping(); 
+        $shippings->email = $request->email;
+        $shippings->first_name = $request->first_name;
+        $shippings->last_name = $request->last_name;
+        $shippings->address = $request->address;
+        $shippings->number = $request->number;
+        $shippings->city = $request->city;
+        $shippings->save();
         
-       Session::put('id', $checks->id);
+       Session::put('id', $shippings->id);
       
 
-    return redirect()->route('check.create')->with('success','Data Inserted Successfully');
-
+    return redirect()->route('payment.index')->with('success','Data Inserted Successfully');
     }
 
     /**
@@ -114,13 +115,5 @@ class CheckoutController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-
-    public function user_logout()
-    {
-      Session::forget('id');
-
-      return redirect()->route('layout');
     }
 }

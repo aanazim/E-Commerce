@@ -97,22 +97,34 @@
                         </div>
                     </div>
                     <div class="col-sm-8">
-                        <?php
-                              $checks = App\Customer::all();
-                        ?>
+                        
                         <div class="shop-menu pull-right">
                             <ul class="nav navbar-nav">
                                 <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
                                 <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
-                                <?php if($checks != NULL) { ?>
+
+                                <?php $checks = Session::get('id')?>
+                             <?php if($checks != NULL) {?>
                                 
                                 <li><a href="{{route('check.create')}}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                                  <?php } else { ?>
 
                           <li><a href="{{route('check.index')}}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                                   <?php } ?>
+
+                             <?php } ?>
+                             <!--cart route -->
+
                                 <li><a href="{{route('add-to-cart.index')}}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                                <li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+                                  <!--user_logout route -->
+                                  <?php if($checks != NULL) {?>
+                                    
+                                    <li><a href="{{route('user_logout')}}"><i class="fa fa-lock"></i> Logout</a></li>
+
+                                 <?php } else { ?>
+                                
+                                <li><a href="{{route('check.index')}}"><i class="fa fa-lock"></i> Login</a></li>
+                                 <?php } ?>
+
                             </ul>
                         </div>
                     </div>

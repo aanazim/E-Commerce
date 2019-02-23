@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Http\Controllers\admin;
-use App\Http\Controllers\Controller;
+namespace App\Http\Controllers;
+use App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Customer;
@@ -46,7 +46,7 @@ class CheckoutController extends Controller
                'password' => 'required|min:6',
                'mobile' => 'required',
           ],
-                      [  
+                    [  
                         'name.required' => 'Please Provide a Name',
                        'email.required' => 'Please Provide a Email',
                        'password.required' => 'Please Provide a Password',
@@ -117,10 +117,19 @@ class CheckoutController extends Controller
     }
 
 
+
+    public function shipping(Request $request){
+      
+
+
+    }
+
     public function user_logout()
     {
-      Session::forget('id');
+      Session::flush('id');
 
       return redirect()->route('layout');
     }
+
+
 }

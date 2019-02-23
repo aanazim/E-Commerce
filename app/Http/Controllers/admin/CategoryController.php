@@ -148,16 +148,11 @@ class CategoryController extends Controller
         return redirect()->back();
     }
 
-    public function post($id){
-        $category = Category::find($id);
-        $category_products = $category->products()->where('status', 1)->get();
-        return view ('pages.categoryshow',compact('category', 'category_products'));
-          
-      }
+   
 
 
 
-      public function AdminAuthCheck(){
+      /*public function AdminAuthCheck(){
            $id = Session::get('id');
 
         if($id){
@@ -166,7 +161,7 @@ class CategoryController extends Controller
         else{
              return Redirect::to('/admin')->send();
         }
-      }
+      }*/
    
 
 }      

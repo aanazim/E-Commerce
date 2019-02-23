@@ -140,7 +140,20 @@
 							<li>Total <span>{{Cart::total()}}</span></li>
 						</ul>
 							<a class="btn btn-default update" href="">Update</a>
-							<a class="btn btn-default check_out" href="{{route('check.index')}}">Check Out</a>
+
+							<?php $checks = Session::get('id')?>
+
+							<?php if($checks != NULL) {?>
+
+						 <a class="btn btn-default check_out" href="{{route('check.create')}}">Check Out</a>
+
+							<?php } else {?>
+
+						  <a class="btn btn-default check_out" href="{{route('check.index')}}">Check Out</a>
+						  
+						   <?php }?>
+							
+							
 					</div>
 				</div>
 			</div>

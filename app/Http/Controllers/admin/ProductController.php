@@ -233,12 +233,5 @@ class ProductController extends Controller
         return redirect()->back();
     }
 
-    public function details ($id){
-
-      
-      $products = Product::find($id);
-     
     
-      return view ('pages.details',compact('products'));
-    }
 }
