@@ -97,11 +97,20 @@
                         </div>
                     </div>
                     <div class="col-sm-8">
+                        <?php
+                              $checks = App\Customer::all();
+                        ?>
                         <div class="shop-menu pull-right">
                             <ul class="nav navbar-nav">
                                 <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
                                 <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
-                                <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+                                <?php if($checks != NULL) { ?>
+                                
+                                <li><a href="{{route('check.create')}}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+                                 <?php } else { ?>
+
+                          <li><a href="{{route('check.index')}}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+                                   <?php } ?>
                                 <li><a href="{{route('add-to-cart.index')}}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
                                 <li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
                             </ul>
@@ -130,7 +139,7 @@
                                 <ul role="menu" class="sub-menu">
                                     <li><a href="shop.html">Products</a></li>
                                     <li><a href="product-details.html">Product Details</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
+                                    <li><a href="">Checkout</a></li>
                                     <li><a href="cart.html">Cart</a></li>
                                     <li><a href="login.html">Login</a></li>
                                 </ul>
@@ -184,8 +193,7 @@
                                             <?php } ?>
                                             <div class="col-sm-6">
                                                <a href="{{route('layout')}}"> <h1><span>E</span>-SHOPPER</h1></a>
-                                                <h2>Free E-Commerce Template</h2>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                                
                                                 <button type="button" class="btn btn-default get">Get it now</button>
                                             </div>
                                             <div class="col-sm-6">

@@ -42,6 +42,8 @@ Route::group(["prefix"=>'admin','middleware' => ['auth', 'admin'],'namespace'=>'
 	Route::resource('/myslider', 'MySliderController');
 
 	Route::resource('/add-to-cart','CartController');
+	Route::resource('/check','CheckoutController');
+
 
 
 });
