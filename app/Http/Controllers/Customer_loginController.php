@@ -1,15 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\admin;
-use App\Http\Controllers\Controller;
+namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Customer;
-use Illuminate\Support\Facades\Redirect;
-// use session;
-session_start();
+use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
-class CheckoutController extends Controller
+class Customer_loginController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +16,7 @@ class CheckoutController extends Controller
      */
     public function index()
     {
-      return view ('pages.login-check');
+        //
     }
 
     /**
@@ -28,7 +26,7 @@ class CheckoutController extends Controller
      */
     public function create()
     {
-        return view ('pages.checkout');
+        //
     }
 
     /**
@@ -39,34 +37,21 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
-          $this->validate($request,[
-               'name' => 'required',
-               'email' => 'required|email',
-               'password' => 'required|min:6',
-               'mobile' => 'required',
-          ],
-                      [  
-                        'name.required' => 'Please Provide a Name',
-                       'email.required' => 'Please Provide a Email',
-                       'password.required' => 'Please Provide a Password',
-                       'mobile.required' => 'Please Provide a Number',
-                       
-                        ]
-       );
         
-
-        $checks = new Customer();
+        $email = $request->email;
+        $password = $request->password;
+        
+      $check_login = Customer::where('email',$email)->where('password',$password)->first();
        
-        $checks->name = $request->name;
-        $checks->email = $request->name;
-        $checks->password = $request->password;
-        $checks->mobile = $request->mobile;
-        $checks->save();
-        
-     
       
-
-    return redirect()->route('check.create')->with('success','Data Inserted Successfully');
+      if($check_login !=NULL){
+         session::put('id',$check_login->id);
+        return redirect()->route('check.create');
+      }else{
+      toastr::error( 'Sorrry Your Credential does not match','error');
+        return redirect()->route('check.index');
+      }
+        
 
     }
 
@@ -113,13 +98,5 @@ class CheckoutController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-
-    public function user_logout()
-    {
-      Session::forget('id');
-
-      return redirect()->route('layout');
     }
 }

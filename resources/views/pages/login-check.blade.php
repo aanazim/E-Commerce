@@ -8,7 +8,7 @@
 					
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
-						<form action="{{route('check.store')}}" method="post">
+			<form action="{{route('check_login.store')}}" method="post">
 							@csrf
 							<input type="email" placeholder="Email Address" name="email" />
 							<input type="password" placeholder="password" name="password" />

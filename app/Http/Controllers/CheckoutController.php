@@ -59,7 +59,7 @@ class CheckoutController extends Controller
         $checks = new Customer();
        
         $checks->name = $request->name;
-        $checks->email = $request->name;
+        $checks->email = $request->email;
         $checks->password = $request->password;
         $checks->mobile = $request->mobile;
         $checks->save();
@@ -126,7 +126,7 @@ class CheckoutController extends Controller
 
     public function user_logout()
     {
-      Session::flush('id');
+      Session::flush();
 
       return redirect()->route('layout');
     }

@@ -141,9 +141,9 @@
 						</ul>
 							<a class="btn btn-default update" href="">Update</a>
 
-							<?php $checks = Session::get('id')?>
+							<?php  $check_login = Session::get('id')?>
 
-							<?php if($checks != NULL) {?>
+							<?php if( $check_login != NULL) {?>
 
 						 <a class="btn btn-default check_out" href="{{route('check.create')}}">Check Out</a>
 
