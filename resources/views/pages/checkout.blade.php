@@ -8,7 +8,7 @@
 				<div class="row">	
 					<div class="col-sm-12 clearfix">
 						<div class="bill-to">
-							<p>Bill To</p>
+							<p>Shipping Address</p>
 							<div class="form-one">
 								<form action="{{route('shipping.store')}}" method="post">
 									@csrf

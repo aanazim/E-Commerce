@@ -102,7 +102,7 @@
 								 <span>
 								 	<form action="{{route('add-to-cart.store')}}" method="post">
 								 		@csrf
-									<span>US $59</span>
+									<!-- <span>US $59</span> -->
 									<label>Quantity:</label>
 									<input name="qty" type="text" value="1" />
 									<input  name="product_id" type="hidden" value="{{$products->id}}">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 12, 2019 at 07:27 AM
+-- Generation Time: Mar 01, 2019 at 12:44 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.1.16
 
@@ -38,46 +38,6 @@ CREATE TABLE `admins` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `admins`
---
-
-INSERT INTO `admins` (`id`, `email`, `password`, `name`, `phone`, `created_at`, `updated_at`) VALUES
-(1, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', NULL, NULL),
-(2, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-06 04:54:32', '2019-02-06 04:54:32'),
-(3, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-06 04:57:45', '2019-02-06 04:57:45'),
-(38, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-06 07:25:19', '2019-02-06 07:25:19'),
-(39, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-06 07:25:25', '2019-02-06 07:25:25'),
-(40, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-06 07:25:28', '2019-02-06 07:25:28'),
-(41, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-06 07:25:36', '2019-02-06 07:25:36'),
-(42, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-06 07:26:45', '2019-02-06 07:26:45'),
-(43, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-06 07:26:48', '2019-02-06 07:26:48'),
-(44, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-06 07:27:32', '2019-02-06 07:27:32'),
-(45, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-06 07:30:07', '2019-02-06 07:30:07'),
-(46, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-06 07:30:44', '2019-02-06 07:30:44'),
-(47, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-06 07:33:31', '2019-02-06 07:33:31'),
-(48, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-06 07:39:18', '2019-02-06 07:39:18'),
-(49, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-06 07:39:23', '2019-02-06 07:39:23'),
-(50, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-06 07:41:53', '2019-02-06 07:41:53'),
-(51, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-06 07:53:53', '2019-02-06 07:53:53'),
-(52, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-06 07:54:05', '2019-02-06 07:54:05'),
-(53, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-06 07:54:51', '2019-02-06 07:54:51'),
-(54, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-06 07:55:36', '2019-02-06 07:55:36'),
-(55, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-06 07:58:29', '2019-02-06 07:58:29'),
-(56, 'vpnazem@gmail.com', 'adsfafa', 'Nazim', '01724074076', '2019-02-06 07:58:37', '2019-02-06 07:58:37'),
-(57, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-06 08:38:41', '2019-02-06 08:38:41'),
-(58, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-06 08:38:47', '2019-02-06 08:38:47'),
-(59, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-06 08:39:04', '2019-02-06 08:39:04'),
-(60, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-06 08:40:23', '2019-02-06 08:40:23'),
-(61, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-06 08:40:31', '2019-02-06 08:40:31'),
-(62, 'vpnazem@gmail.com', '01585441010', 'Nazim', '01724074076', '2019-02-06 08:42:41', '2019-02-06 08:42:41'),
-(63, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-06 08:43:35', '2019-02-06 08:43:35'),
-(64, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-08 03:25:36', '2019-02-08 03:25:36'),
-(65, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-08 03:25:42', '2019-02-08 03:25:42'),
-(66, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-08 03:25:45', '2019-02-08 03:25:45'),
-(67, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-11 07:04:59', '2019-02-11 07:04:59'),
-(68, 'vpnazem@gmail.com', '01686441010', 'Nazim', '01724074076', '2019-02-11 07:05:14', '2019-02-11 07:05:14');
-
 -- --------------------------------------------------------
 
 --
@@ -98,11 +58,9 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `description`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Rubel', 'dfdgdg', 1, '2019-02-02 13:36:22', '2019-02-06 23:46:05'),
-(3, 'Shipon', 'Shipon is good', 1, '2019-02-07 00:12:12', '2019-02-07 00:12:32'),
-(4, 'Ripon', 'Ripon is not good', 1, '2019-02-07 00:13:16', '2019-02-08 12:17:24'),
-(5, 'jamal', 'it is good', 1, '2019-02-08 12:17:15', '2019-02-08 12:17:29'),
-(6, 'Mofiz', 'is bad', 1, '2019-02-08 12:18:25', '2019-02-08 12:18:31');
+(1, 'Rubel', 'fafaf', 1, '2019-02-18 08:51:13', '2019-02-18 08:54:28'),
+(2, 'Freelancing', 'fafdadf', 1, '2019-02-18 08:51:37', '2019-02-18 08:54:23'),
+(3, 'Samsung', 'good phone', 0, '2019-02-26 06:40:58', '2019-02-26 06:40:58');
 
 -- --------------------------------------------------------
 
@@ -124,10 +82,7 @@ CREATE TABLE `manufactures` (
 --
 
 INSERT INTO `manufactures` (`id`, `name`, `description`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'joseph', 'ooo', 1, '2019-02-02 13:36:59', '2019-02-06 23:54:30'),
-(2, 'Samsung', 'Samsung is best', 1, '2019-02-10 01:26:13', '2019-02-10 01:28:15'),
-(3, 'Symphony', 'symphony is Bangladeshi Phone', 1, '2019-02-10 01:27:10', '2019-02-10 01:28:19'),
-(4, 'oppo', 'oppo is  one of the best phones', 1, '2019-02-10 01:28:06', '2019-02-10 01:28:22');
+(1, 'Others income', 'sggfsgsgsg', 0, '2019-02-18 08:52:50', '2019-02-18 08:52:50');
 
 -- --------------------------------------------------------
 
@@ -152,7 +107,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (4, '2019_01_30_094101_create_categories_table', 1),
 (5, '2019_01_30_181025_create_manufactures_table', 1),
 (6, '2019_01_31_144313_create_products_table', 1),
-(7, '2019_02_08_012807_create_sliders_table', 2);
+(7, '2019_02_08_012807_create_sliders_table', 1),
+(8, '2019_02_21_103905_create_login-checks_table', 2),
+(9, '2019_02_21_105007_create_customers_table', 3),
+(10, '2019_02_23_105453_create_shippings_table', 4);
 
 -- --------------------------------------------------------
 
@@ -193,17 +151,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `category_id`, `manufacture_id`, `short_description`, `long_description`, `price`, `image`, `size`, `color`, `status`, `created_at`, `updated_at`) VALUES
-(3, 'head', 1, 1, 'xxxxx', 'xxxx', 888.00, '1549176752.jpg', 'x', 'beguni', 1, '2019-02-02 14:44:36', '2019-02-03 01:42:29'),
-(6, 'samsung', 3, 1, 'ggggggggg', 'rrrrrrrrr', 555.00, '1549176390.jpg', 'xxl', 'red', 1, '2019-02-03 00:46:30', '2019-02-07 19:17:39'),
-(7, 'samsung', 1, 1, 'ggggggggg', 'rrrrrrrrr', 555.00, '1549176420.jpg', 'xxl', 'red', 1, '2019-02-03 00:47:00', '2019-02-07 19:17:43'),
-(8, 'samsung', 4, 1, 'ggggggggg', 'rrrrrrrrr', 555.00, '1549176671.jpg', 'xxl', 'red', 1, '2019-02-03 00:48:10', '2019-02-07 19:17:49'),
-(9, 'samsung', 1, 1, 'ggggggggg', 'rrrrrrrrr', 555.00, '1549176643.jpg', 'xxl', 'red', 1, '2019-02-03 00:49:21', '2019-02-08 13:01:47'),
-(10, 'valo', 3, 1, 'good', 'nice', 99.00, '1549650006.jpg', 'iu', 'blue', 1, '2019-02-08 12:20:06', '2019-02-08 13:02:05'),
-(11, 'Hashi', 4, 1, 'kalo', 'loop', 1200.00, '1549650112.jpg', 'vi', 'yello', 1, '2019-02-08 12:21:52', '2019-02-08 13:02:33'),
-(12, 'Mobile', 6, 2, 'Samsung is better', 'We like samsung', 12000.00, '1549783896.jpg', 'xx', 'black', 1, '2019-02-10 01:31:36', '2019-02-10 01:39:57'),
-(13, 'Mobile', 5, 3, 'Symphony is not good', 'It has many pbl', 3400.00, '1549784013.jpg', 'ty', 'red', 1, '2019-02-10 01:33:33', '2019-02-10 01:40:08'),
-(14, 'mobile', 6, 3, 'not good', 'authority has improved', 5000.00, '1549784112.jpg', 'vi', 'pink', 1, '2019-02-10 01:35:12', '2019-02-10 01:40:14'),
-(15, 'Mobile', 5, 4, 'oppo is valuable phone', 'oppo is number one brand in the world', 12000.00, '1549784187.jpg', 'xl', 'gold', 1, '2019-02-10 01:36:27', '2019-02-10 01:40:19');
+(1, 'hdhd', 1, 1, 'fasfaf', 'fafddaf', 44.00, '1550501603.jpg', 'qw', 'blue', 1, '2019-02-18 08:53:24', '2019-02-18 08:55:23');
 
 -- --------------------------------------------------------
 
@@ -224,12 +172,9 @@ CREATE TABLE `sliders` (
 --
 
 INSERT INTO `sliders` (`id`, `image`, `status`, `created_at`, `updated_at`) VALUES
-(2, '1549636984.jpg', '1', '2019-02-08 08:43:04', '2019-02-08 11:44:58'),
-(4, '1549637296.jpg', '0', '2019-02-08 08:48:17', '2019-02-08 08:48:17'),
-(5, '1549637984.jpg', '0', '2019-02-08 08:59:44', '2019-02-08 08:59:44'),
-(6, '1549638246.jpg', '1', '2019-02-08 09:04:06', '2019-02-08 11:46:45'),
-(7, '1549638298.jpg', '1', '2019-02-08 09:04:58', '2019-02-08 11:47:33'),
-(8, '1549638319.jpg', '0', '2019-02-08 09:05:19', '2019-02-08 09:05:19');
+(1, '1550741551.jpg', '1', '2019-02-21 03:32:32', '2019-02-21 03:32:39'),
+(2, '1550741628.jpg', '1', '2019-02-21 03:33:48', '2019-02-21 03:34:08'),
+(3, '1550741642.jpg', '1', '2019-02-21 03:34:03', '2019-02-21 03:34:12');
 
 -- --------------------------------------------------------
 
@@ -239,6 +184,7 @@ INSERT INTO `sliders` (`id`, `image`, `status`, `created_at`, `updated_at`) VALU
 
 CREATE TABLE `users` (
   `id` int(10) UNSIGNED NOT NULL,
+  `role` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
@@ -247,6 +193,33 @@ CREATE TABLE `users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `role`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'admin', 'Nazim', 'vpnazem@gmail.com', NULL, '$2y$10$WGOzLYJBMmenE7e4ge5B.OPQHyYcOLmgeixwUFQwLW4slzCkV/JJq', 'cjz0uVEUB8u8TLG1OM3hSX9fZj1t6aa3zSlbHwFOI1XLrZYyWycGdmTx8n5B', '2019-02-18 06:43:12', '2019-02-18 06:43:12'),
+(2, 'user', 'plabon', 'plabon@gmail.com', NULL, '$2y$10$TlY7gvt.FAuNFWwOIgRj9.5JEcBFufbvvIYn.nYaCsnbW/3y2aoAq', NULL, '2019-02-18 07:05:39', '2019-02-18 07:05:39'),
+(3, 'user', 'Niren', 'niren@gmail.com', NULL, '$2y$10$cXZZJ75RmMbcxy/ntBGUMemyZ/T0aOOzn4HZlZ/FWdVouerQWGwSi', NULL, '2019-02-18 07:12:07', '2019-02-18 07:12:07'),
+(4, 'user', 'Joseph', 'joseph@gmail.com', NULL, '$2y$10$xQwoYi6TbTi0f90huKFKYOAWBL3Y6NJynAViBkGwL2Hk0EuRAYWl2', NULL, '2019-02-18 07:15:24', '2019-02-18 07:15:24'),
+(5, 'user', 'laravel', 'laravel@gmail.com', NULL, '$2y$10$BcscXuTSkrTOB2.cTwB.Vu//HG/BMaeWnjLn3FWKUONQj40BEqRye', NULL, '2019-02-18 07:20:20', '2019-02-18 07:20:20'),
+(6, 'user', 'Vue', 'vue@gmail.com', NULL, '$2y$10$mBzKund.iIqzjHGEYrP53eI5bXtIzqTAyVC0.mDz/7SD2uXxwRyEK', NULL, '2019-02-18 07:22:15', '2019-02-18 07:22:15'),
+(7, 'user', 'fafaf', 'faf@gmail.com', NULL, '$2y$10$o98V7wp6cMxXbJjjcwtVK.EJrz45VGCmG4CjO8YXPhUkqbHikww7K', NULL, '2019-02-18 07:25:12', '2019-02-18 07:25:12'),
+(8, 'user', 'faf', 'fafa@gmail.com', NULL, '$2y$10$mpEwi/AsNKVevVOWfUpCz.R1Q2T9TD1Jj1MXSqPlVvIMfOk5Qg1pC', NULL, '2019-02-18 07:26:51', '2019-02-18 07:26:51'),
+(9, 'user', 'fafa', 'affa@gmail.com', NULL, '$2y$10$fUyh9Z5o35VgxOWRuHxspelgPPcMAHgtWMdk3gLvaRo7Aq2BP95PW', NULL, '2019-02-18 07:28:15', '2019-02-18 07:28:15'),
+(10, 'user', 'fafa', 'affgsgda@gmail.com', NULL, '$2y$10$bGJKeGg5n4Ii4BqbNYEGqOLe63qKki/0dgFeJi2q0oCjpbeGV6vUG', NULL, '2019-02-18 07:30:08', '2019-02-18 07:30:08'),
+(11, 'user', 'fadfadf', 'fafafafafa@gmail.com', NULL, '$2y$10$JvheBaAnudQoS1X45K3RbuWJ.Q4NBKtlAK/HF/Qg8M7qhMn.lBUeu', NULL, '2019-02-18 07:31:44', '2019-02-18 07:31:44'),
+(12, 'user', 'vzvzffaf', 'fasdfarer@gmail.com', NULL, '$2y$10$1ysAIHxM1axuXNzr7ZgSB.e15nQk2cWOPQZtt4znPhytPygwt7P4q', 'ni82FRjXOw9bwm7orQWF2OrnBFvG2LAwaMqrUiMCGIaNsqOUt6QSmnHrHqX9', '2019-02-18 07:36:00', '2019-02-18 07:36:00'),
+(13, 'user', 'fafafadfafzv', 'twsgs@gmail.com', NULL, '$2y$10$5yq4cEkMER0qa7XKcWZnWeQrZ0xMlrMCTznriUFwJAtRGaYXC4CJu', 'SehRlqZUypsC8EZX3k1saDztvzTgzDFCdjwX9N3tFpeCQY2yEIs4k8CMbEOO', '2019-02-18 07:36:42', '2019-02-18 07:36:42'),
+(14, 'user', 'rtuyrur', 'rtyuyru@gmail.com', NULL, '$2y$10$rdF/h71n6uQZWw/3rm4ydOedpGlQWmcUrAAOdO87QLMtH9ruuprbC', 'fGwpgLFKdR1hNJkUqWB3RIH8He08tMl0kPEoTtfjThw1fOgFueuzPPhIe8x5', '2019-02-18 07:37:36', '2019-02-18 07:37:36'),
+(15, 'user', 'ghjvcc', 'bfbsd@gmail.com', NULL, '$2y$10$Ibqv2Nw.0ZbfF7t06Kcj5uL/GNaPuYGoDzGmgeC.Cx3xe3y.eWple', 'kLJUzkHxLJiTgjOm15aStswGE45eKadn70dIKKUxyHWc7zJSSZJzD4dcvNWT', '2019-02-18 07:40:16', '2019-02-18 07:40:16'),
+(16, 'user', 'bxbxb', 'xbbxb@gmail.com', NULL, '$2y$10$HMHWcKuQrulfUuzZX7PXMOLmRlY/Ji99aKbUBFM9Fbaxna6C05F7q', 'xwZjyDfbJ9DttQrczKcm2FYanaARP51na6i75EQ3n004g0o5WplYyN5OqFOj', '2019-02-18 07:42:13', '2019-02-18 07:42:13'),
+(17, 'user', 'bbxgsgs', 'aftrwtbb@gmail.com', NULL, '$2y$10$N3NUNsdxxoVn6hqjdQJf2OKNZQ8c8En7ffb3grVUR117X6d82Eij2', 'zo43VPdnKZZ6YPv37BqUl2V2T95xAZ8JoULlZAPoeuo0fCBFFojlj7SXhnuW', '2019-02-18 07:44:07', '2019-02-18 07:44:07'),
+(18, 'user', 'xbbx', 'oyuioigsz@gmail.com', NULL, '$2y$10$lEuq35PI/9S0nTLditwui.vbYi5hBFif/KzZ2qiA3C89I5EidfMiS', NULL, '2019-02-18 07:46:24', '2019-02-18 07:46:24'),
+(19, 'user', 'iuuit', 'qrqr@gmail.com', NULL, '$2y$10$reTfKwycgd/FXb5kTVaTu.Hkv6BCwXAR0l3vt2cvkKIBIx.GpQHB2', 'yKf7SD2QQ7lwmlbAKNLi3N1YbHCg2pIPrSKKIkD0W9kpjqsUbRCngXSYx28H', '2019-02-18 07:49:22', '2019-02-18 07:49:22'),
+(20, 'user', 'll@gmail.com', 'll@gmail.com', NULL, '$2y$10$IP0/XFiZb2An2/aAkDBZo.O.tFcrHjLqzpf3OyHiCAYSRw9RxpqKG', NULL, '2019-02-18 08:02:35', '2019-02-18 08:02:35'),
+(21, 'user', 'ncnbcn', 'ncncnb@gmail.com', NULL, '$2y$10$w8mfS/YiucfDmZiU9TGFuetVxxKTP4mfCBuQzA0mhQ8QrADy.2SXS', NULL, '2019-02-18 08:39:51', '2019-02-18 08:39:51');
 
 --
 -- Indexes for dumped tables
@@ -309,43 +282,43 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `manufactures`
 --
 ALTER TABLE `manufactures`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `sliders`
 --
 ALTER TABLE `sliders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

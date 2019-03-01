@@ -68,7 +68,7 @@
 				</table>
 			</div>
 		</div>
-	</section> /#cart_items
+	</section>
 	
 	<section id="do_action">
 		<div class="container">
