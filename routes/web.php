@@ -17,7 +17,11 @@ Route::resource('/check','CheckoutController');
 Route::get('details/{id}', 'Product_detailsController@details')->name('product.details');
 Route::get('/category/{category}','Category_postController@post')->name('category.post');
 Route::get('/manufacture/{manufacture}','Manufacture_PostController@post')->name('manufacture.post');
+Route::get('/executePayment','PaymentController@executePayment')->name('executePayment');
+Route::get('/cancel','PaymentController@cancel')->name('cancel');
 Route::resource('/payment','PaymentController');
+
+
 Route::resource('/shipping','ShippingController');
 /*customer login and logout*/
 Route::resource('/check_login','Customer_loginController');
