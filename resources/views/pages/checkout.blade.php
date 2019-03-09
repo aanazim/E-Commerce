@@ -4,7 +4,16 @@
 <section>
 	
 	<div class="shopper-informations">
-		@include('message')
+	 @if ($errors->any())
+       @foreach ($errors->all() as $error)
+      
+    <div class="alert alert-danger alert-dismissible">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>{{ $error }}</strong>  
+    </div>
+
+       @endforeach
+     @endif
 				<div class="row">	
 					<div class="col-sm-12 clearfix">
 						<div class="bill-to">

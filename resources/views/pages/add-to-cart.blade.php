@@ -31,7 +31,7 @@
 						@foreach($contents as $content)
 						<tr>
 							<td class="cart_product">
-								<a href=""><img src="{{asset('')}}" alt="" class="img-fluid"></a>
+								<a href=""><img style="height: 90px; width: 130px;" src="{{asset('product/'.$content->options->image)}}" alt="{{ $content->options->image }}" class="img-fluid"></a>
 							</td>
 							<td class="cart_description">
 								<h4><a href="">{{$content->name}}</a></h4>
@@ -46,7 +46,7 @@
 									<form action="{{route('add-to-cart.update',$content->rowId)}}" method="post">
 									  @csrf
 									@method('PUT')
-									<input class="cart_quantity_input" type="text" name="qty" value="{{$content->qty}}" autocomplete="off" size="2">
+									<input class="cart_quantity_input" type="text" name="qty" value="{{ $content->qty }}" autocomplete="off" size="2">
 
 									<!-- <input type="text" value="{{$content->rowId}}" name="rowId"> -->
                                      <input type="submit" name="submit"class="btn btn-info" value="update" style="margin-left: 10px;">
@@ -158,6 +158,6 @@
 				</div>
 			</div>
 		</div>
-	</section>/#do_action
+	</section>
 
 @endsection

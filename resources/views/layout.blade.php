@@ -7,6 +7,7 @@
         <meta name="author" content="">
         <title>Home | E-Shopper</title>
         <link href="{{asset('frontend/css/bootstrap.min.css')}}" rel="stylesheet">
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
         <link href="{{asset('frontend/css/font-awesome.min.css')}}" rel="stylesheet">
         <link href="{{asset('frontend/css/prettyPhoto.css')}}" rel="stylesheet">
         <link href="{{asset('frontend/css/price-range.css')}}" rel="stylesheet">
@@ -24,6 +25,7 @@
         <link rel="apple-touch-icon-precomposed" href="{{asset('images/ico/apple-touch-icon-57-precomposed.png')}}">
         <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
         <link rel="stylesheet" href="{{asset('frontend/css')}}/owl.carousel.min.css">
+
         <link rel="stylesheet" href="{{asset('frontend/css')}}/owl.theme.default.min.css">
         <style>
         .owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot {
@@ -36,9 +38,9 @@
         height: 60px;
         }
         </style>
+        @stack('css')
         </head><!--/head-->
         <body>
-            @include('message')
             <header id="header"><!--header-->
             <div class="header_top"><!--header_top-->
             <div class="container">
@@ -71,38 +73,38 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="logo pull-left">
-                            <a href="index.html"><img src="{{asset('frontend/images/home/logo.png')}}" alt="" /></a>
+                            <a href="{{route('layout')}}"><img src="{{asset('frontend/images/home/logo.png')}}" alt="" /></a>
                         </div>
-                        <div class="btn-group pull-right">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                                USA
-                                <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Canada</a></li>
-                                    <li><a href="#">UK</a></li>
-                                </ul>
-                            </div>
-                            
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                                DOLLAR
-                                <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Canadian Dollar</a></li>
-                                    <li><a href="#">Pound</a></li>
-                                </ul>
-                            </div>
-                        </div>
+                       <!--  <div class="btn-group pull-right">
+                           <div class="btn-group">
+                               <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
+                               USA
+                               <span class="caret"></span>
+                               </button>
+                               <ul class="dropdown-menu">
+                                   <li><a href="#">Canada</a></li>
+                                   <li><a href="#">UK</a></li>
+                               </ul>
+                           </div>
+                           
+                           <div class="btn-group">
+                               <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
+                               DOLLAR
+                               <span class="caret"></span>
+                               </button>
+                               <ul class="dropdown-menu">
+                                   <li><a href="#">Canadian Dollar</a></li>
+                                   <li><a href="#">Pound</a></li>
+                               </ul>
+                           </div>
+                       </div> -->
                     </div>
                     <div class="col-sm-8">
                         
                         <div class="shop-menu pull-right">
                             <ul class="nav navbar-nav">
-                                <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
-                                <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
+                                <!-- <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
+                                <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li> -->
 
                                 <?php  $check_login = Session::get('id')?>
                              <?php if( $check_login != NULL) {?>
@@ -147,24 +149,47 @@
                         </div>
                         <div class="mainmenu pull-left">
                             <ul class="nav navbar-nav collapse navbar-collapse">
-                                <li><a href="index.html" class="active">Home</a></li>
+                                <li><a href="{{route('layout')}}" class="active">Home</a></li>
                                 <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
-                                    <li><a href="shop.html">Products</a></li>
-                                    <li><a href="product-details.html">Product Details</a></li>
-                                    <li><a href="">Checkout</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="login.html">Login</a></li>
+                                   <!--  <li><a href="shop.html">Products</a></li>
+                                   
+                                   
+                                     
+                                   <li><a href="">Product Details</a></li>
+                                      -->
+                                    
+                                     <!-- checkout -->
+                               <?php if( $check_login != NULL) {?>
+                                
+                                <li><a href="{{route('check.create')}}"> Checkout</a></li>
+                                  <?php } else { ?>
+
+                                <li><a href="{{route('check.index')}}">Checkout</a></li>
+
+                                 <?php } ?>
+                                    <li><a href="{{route('add-to-cart.index')}}">Cart</a></li>
+
+                                    <!-- login -->
+                                    <?php if( $check_login != NULL) {?>
+                                    
+                                    <li><a href="{{route('user_logout')}}">Logout</a></li>
+
+                                    <?php } else { ?>
+                                
+                                   <li><a href="{{route('check.index')}}">Login</a></li>
+                                    <?php } ?>
+
                                 </ul>
                             </li>
-                            <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
-                            <ul role="menu" class="sub-menu">
-                                <li><a href="blog.html">Blog List</a></li>
-                                <li><a href="blog-single.html">Blog Single</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="404.html">404</a></li>
-                        <li><a href="contact-us.html">Contact</a></li>
+                          <!--   <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
+                          <ul role="menu" class="sub-menu">
+                              <li><a href="blog.html">Blog List</a></li>
+                              <li><a href="blog-single.html">Blog Single</a></li>
+                          </ul>
+                                                  </li> -->
+                       <!--  <li><a href="404.html">404</a></li>
+                       <li><a href="contact-us.html">Contact</a></li> -->
                     </ul>
                 </div>
             </div>
@@ -207,7 +232,7 @@
                                             <div class="col-sm-6">
                                                <a href="{{route('layout')}}"> <h1><span>E</span>-SHOPPER</h1></a>
                                                 
-                                                <button type="button" class="btn btn-default get">Get it now</button>
+                                               <!--  <button type="button" class="btn btn-default get">Get it now</button> -->
                                             </div>
                                             <div class="col-sm-6">
                                                 <img src="{{asset('slider/'.$slider->image)}}" class="girl img-responsive" alt="" />

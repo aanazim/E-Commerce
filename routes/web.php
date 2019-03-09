@@ -17,8 +17,8 @@ Route::resource('/check','CheckoutController');
 Route::get('details/{id}', 'Product_detailsController@details')->name('product.details');
 Route::get('/category/{category}','Category_postController@post')->name('category.post');
 Route::get('/manufacture/{manufacture}','Manufacture_PostController@post')->name('manufacture.post');
-Route::get('/executePayment','PaymentController@executePayment')->name('executePayment');
-Route::get('/cancel','PaymentController@cancel')->name('cancel');
+/*Route::get('/executePayment','PaymentController@executePayment')->name('executePayment');
+Route::get('/cancel','PaymentController@cancel')->name('cancel');*/
 Route::resource('/payment','PaymentController');
 
 
@@ -47,10 +47,25 @@ Route::group(["prefix"=>'admin','middleware' => ['auth', 'admin'],'namespace'=>'
 
 
 
-/*Route::get('/empty', function(){
+Route::get('/empty', function(){
 	Cart::destroy();
 	return 'Destroyed';
-});*/
+});
 Auth::routes();
 
+
+
+
 /*Route::get('/dashboard', 'HomeController@user')->name('dashboard');*/
+
+
+Route::get('/mytest', function(){
+	$product_name = '';
+        $product_quantity = 0;
+
+        foreach (Cart::content() as $product) {
+         $product_name = $product->name;
+         $product_quantity = $product_quantity + $product->qty;
+         }
+	return $product_name = " ' " . $product_name . " ' ";
+});

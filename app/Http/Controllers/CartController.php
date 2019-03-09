@@ -7,6 +7,7 @@ use App\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Session;
 
 class CartController extends Controller
 {
@@ -17,9 +18,7 @@ class CartController extends Controller
      */
     public function index()
     {
-        $categories = Category::where('status',1)->get();
-        $products = Product::where('status',1)->get();
-        return view ('pages.add-to-cart',compact('products', 'categories'));
+        return view ('pages.add-to-cart');
     }
 
     /**
@@ -39,7 +38,12 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {    
+    {
+        // return $request->qty;     
+        $this->validate($request, [
+           'qty' => 'required|numeric|min:2|max:5',
+        ]);
+
         $qty = $request->qty;
         $product_id = $request->product_id;
         $product_info = Product::find($product_id);
@@ -69,8 +73,8 @@ class CartController extends Controller
     {  
 
          
-      Cart::update($rowId,0);
-    return  redirect()->route('add-to-cart.index');
+        Cart::update($rowId,0);
+        return  redirect()->route('add-to-cart.index');
           
        
     }
@@ -95,11 +99,9 @@ class CartController extends Controller
      */
     public function update(Request $request,$rowId)
     {
-         $qty = $request->qty;
-      
-         Cart::update($rowId, $qty);
-
-      return  redirect()->route('add-to-cart.index');
+        $qty = $request->qty;
+        Cart::update($rowId, $qty);
+        return  redirect()->route('add-to-cart.index');
 
     }
 
