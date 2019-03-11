@@ -7,6 +7,7 @@ use App\Product;
 use Illuminate\Http\Request;
 
 
+
 class HomeController extends Controller
 {
     /**
@@ -27,7 +28,7 @@ class HomeController extends Controller
     public function index()
     {   
         
-       
+        /*$link = Link::findOrFail(1);*/
         return view('layout');
     }
 

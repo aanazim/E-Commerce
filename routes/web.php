@@ -40,6 +40,11 @@ Route::group(["prefix"=>'admin','middleware' => ['auth', 'admin'],'namespace'=>'
 	Route::put('mstatus/{id}', 'ManufactureController@status')->name('mstatus.approved');
 	Route::put('sstatus/{id}', 'MySliderController@status')->name('sstatus.approved');  
 	Route::resource('/myslider', 'MySliderController');
+	/*s*/
+	/*Route::get('link/','LInkController@index')->name('link.index');
+	Route::get('link/{id}','LInkController@destroy')->name('link.destroy');
+	Route::get('link/{edit}','LInkController@edit')->name('link.edit');*/
+	Route::resource('/link', 'LinksController');
 
 });
 
