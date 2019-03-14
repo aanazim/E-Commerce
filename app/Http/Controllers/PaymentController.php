@@ -45,6 +45,11 @@ class PaymentController extends Controller
      */
     public function store(Request $request)
     {
+
+
+
+       return $request;
+
         /*
         $apiContext = new \PayPal\Rest\ApiContext(
              new \PayPal\Auth\OAuthTokenCredential(

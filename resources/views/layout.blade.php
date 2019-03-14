@@ -480,6 +480,7 @@
         <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
         <script src="jquery-1.9.1.min.js"></script>
         
+        
         <!-- Include js plugin -->
         <script src="{{asset('frontend/js')}}/owl.carousel.min.js"></script>
         <script>
@@ -499,6 +500,7 @@
         owl.trigger('stop.owl.autoplay')
         })
         </script>
+         @stack('scripts')
         {!! Toastr::message() !!}
     </body>
 </html>
