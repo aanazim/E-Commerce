@@ -106,9 +106,9 @@
   <script src="https://js.stripe.com/v3/"></script>
 
   <script>
-    function(){
+   (function(){
       // Create a Stripe client.
-var stripe = Stripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+var stripe = Stripe('pk_test_LuMY4WaUgH5WZ6EGvu2sAh2x');
 
 // Create an instance of Elements.
 var elements = stripe.elements();
@@ -179,7 +179,7 @@ function stripeTokenHandler(token) {
   // Submit the form
  /* form.submit();*/
 }
-    }
+    })();
     
   </script>
 

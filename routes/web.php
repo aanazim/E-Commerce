@@ -26,6 +26,7 @@ Route::resource('/shipping','ShippingController');
 /*customer login and logout*/
 Route::resource('/check_login','Customer_loginController');
 Route::get('user_logout','CheckoutController@user_logout')->name('user_logout');
+Route::post('search','SearchController@search')->name('search');
 /*BACKEND*/
 
 Route::group(["prefix"=>'admin','middleware' => ['auth', 'admin'],'namespace'=>'admin'],function (){
@@ -40,10 +41,7 @@ Route::group(["prefix"=>'admin','middleware' => ['auth', 'admin'],'namespace'=>'
 	Route::put('mstatus/{id}', 'ManufactureController@status')->name('mstatus.approved');
 	Route::put('sstatus/{id}', 'MySliderController@status')->name('sstatus.approved');  
 	Route::resource('/myslider', 'MySliderController');
-	/*s*/
-	/*Route::get('link/','LInkController@index')->name('link.index');
-	Route::get('link/{id}','LInkController@destroy')->name('link.destroy');
-	Route::get('link/{edit}','LInkController@edit')->name('link.edit');*/
+	
 	Route::resource('/link', 'LinksController');
 
 });
@@ -64,13 +62,4 @@ Auth::routes();
 /*Route::get('/dashboard', 'HomeController@user')->name('dashboard');*/
 
 
-Route::get('/mytest', function(){
-	$product_name = '';
-        $product_quantity = 0;
 
-        foreach (Cart::content() as $product) {
-         $product_name = $product->name;
-         $product_quantity = $product_quantity + $product->qty;
-         }
-	return $product_name = " ' " . $product_name . " ' ";
-});

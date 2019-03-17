@@ -120,7 +120,7 @@
 	</div>
 	</div><!--/product-details-->
 	
-	<div class="category-tab shop-details-tab"><!--category-tab-->
+	<!-- <div class="category-tab shop-details-tab">category-tab
 	<div class="col-sm-12">
 		<ul class="nav nav-tabs">
 			<li><a href="#details" data-toggle="tab">Details</a></li>
@@ -134,7 +134,7 @@
 			<div class="col-sm-3">
 				<label for="long-description">
 					<p id="long-description">{{$products->long_description}}</p></label><br>
-					<!-- <div class="product-image-wrapper">
+					<div class="product-image-wrapper">
 							<div class="single-products">
 									<div class="productinfo text-center">
 											<img src="images/home/gallery1.jpg" alt="" />
@@ -176,7 +176,7 @@
 											<img src="images/home/gallery4.jpg" alt="" />
 											<h2>$56</h2>
 											<p>Easy Polo Black Edition</p>
-								<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button> -->
+								<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
 							</div>
 						</div>
 					</div>
@@ -240,9 +240,9 @@
 			</div>
 			
 		</div>
-		</div><!--/category-tab-->
+		</div>/category-tab
 		
-		<!-- <div class="recommended_items">recommended_items
+		<div class="recommended_items">recommended_items
 				<h2 class="title text-center">recommended items</h2>
 				
 				<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
@@ -331,17 +331,17 @@
 								<i class="fa fa-angle-right"></i>
 									</a>
 				</div>
-		</div>/recommended_items -->
+		</div>/recommended_items
 		
 	</div>
-</div>
-</div>
-</section>
-
-<footer id="footer"><!--Footer-->
-<div class="footer-top">
-<div class="container">
-<div class="row">
+	</div>
+	</div>
+	</section>
+	
+	<footer id="footer">Footer
+	<div class="footer-top">
+	<div class="container">
+	<div class="row">
 	<div class="col-sm-2">
 		<div class="companyinfo">
 			<h2><span>e</span>-shopper</h2>
@@ -415,13 +415,13 @@
 			<p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
 		</div>
 	</div>
-</div>
-</div>
-</div>
-
-<div class="footer-widget">
-<div class="container">
-<div class="row">
+	</div>
+	</div>
+	</div>
+	
+	<div class="footer-widget">
+	<div class="container">
+	<div class="row">
 	<div class="col-sm-2">
 		<div class="single-widget">
 			<h2>Service</h2>
@@ -481,16 +481,16 @@
 		</div>
 	</div>
 	
-</div>
-</div>
-</div>
-
-<div class="footer-bottom">
-<div class="container">
-<div class="row">
+	</div>
+	</div>
+	</div>
+	
+	<div class="footer-bottom">
+	<div class="container">
+	<div class="row">
 	<p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
 	<p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
-</div>
+	</div> -->
 </div>
 </div>
 

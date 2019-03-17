@@ -198,7 +198,11 @@
             </div>
             <div class="col-sm-3">
                 <div class="search_box pull-right">
-                    <input type="text" placeholder="Search"/>
+                    <form action="{{route('search')}}" method="POST" >
+                        @csrf
+                    <input type="text" placeholder="Search" name="search"/>
+                    
+                    </form>
                 </div>
             </div>
         </div>
@@ -341,7 +345,7 @@
                             <div class="video-gallery text-center">
                                 <a href="#">
                                     <div class="iframe-img">
-                                        <img src="images/home/iframe2.png" alt="" />
+                                        <img src="{{asset('frontend/images/home/iframe2.png')}}" alt="" />
                                     </div>
                                     <div class="overlay-icon">
                                         <i class="fa fa-play-circle-o"></i>
@@ -356,7 +360,7 @@
                             <div class="video-gallery text-center">
                                 <a href="#">
                                     <div class="iframe-img">
-                                        <img src="images/home/iframe3.png" alt="" />
+                                        <img src="{{asset('frontend/images/home/iframe3.png')}}" alt="" />
                                     </div>
                                     <div class="overlay-icon">
                                         <i class="fa fa-play-circle-o"></i>
@@ -371,7 +375,7 @@
                             <div class="video-gallery text-center">
                                 <a href="#">
                                     <div class="iframe-img">
-                                        <img src="images/home/iframe4.png" alt="" />
+                                        <img src="{{asset('frontend/images/home/iframe4.png')}}" alt="" />
                                     </div>
                                     <div class="overlay-icon">
                                         <i class="fa fa-play-circle-o"></i>
@@ -384,7 +388,7 @@
                     </div>
                     <div class="col-sm-3">
                         <div class="address">
-                            <img src="images/home/map.png" alt="" />
+                            <img src="{{asset('frontend/images/home/map.png')}}" alt="" />
                             <p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
                         </div>
                     </div>
@@ -447,8 +451,8 @@
                         <div class="single-widget">
                             <h2>About Shopper</h2>
                             <form action="#" class="searchform">
-                                <input type="text" placeholder="Your email address" />
-                                <button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
+                               <!-- <input type="text" placeholder="Your email address" />
+                               <button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button> -->
                                 <p>Get the most recent updates from <br />our site and be updated your self...</p>
                             </form>
                         </div>

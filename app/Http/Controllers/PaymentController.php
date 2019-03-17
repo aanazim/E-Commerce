@@ -14,6 +14,8 @@ use PayPal\Api\RedirectUrls;
 use PayPal\Api\Transaction;
 use PayPal\Api\PaymentExecution;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\Redirect;
+use Brian2694\Toastr\Facades\Toastr;
 
 class PaymentController extends Controller
 {
@@ -45,10 +47,10 @@ class PaymentController extends Controller
      */
     public function store(Request $request)
     {
+     
 
-
-
-       return $request;
+      toastr::success ('You have paid Successfully', 'success');
+      return redirect()->route('layout');
 
         /*
         $apiContext = new \PayPal\Rest\ApiContext(
