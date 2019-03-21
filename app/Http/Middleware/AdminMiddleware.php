@@ -18,6 +18,7 @@ class AdminMiddleware
     {
 
       if(!Auth::user()->role == 'admin'){
+            
             return redirect()->route('layout');
         }
 

@@ -29,7 +29,7 @@ Route::get('user_logout','CheckoutController@user_logout')->name('user_logout');
 Route::post('search','SearchController@search')->name('search');
 /*BACKEND*/
 
-Route::group(["prefix"=>'admin','middleware' => ['auth', 'admin'],'namespace'=>'admin'],function (){
+Route::group(["prefix"=>'admin','middleware' => ['auth', 'test'],'namespace'=>'admin'],function (){
 
 	Route::get('dashboard/','UserController@user')->name('dashboard');
 	Route::resource('/category','CategoryController');
