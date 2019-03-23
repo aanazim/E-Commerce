@@ -16,12 +16,21 @@ class TestMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(!Auth::user()->role == 'admin'){
+        /*if(!Auth::user()->role == 'admin'){
             
             return redirect()->route('layout');
         }
 
 
-        return $next($request);
+        return $next($request);*/
+
+
+        if(Auth::user()->id == 1)
+        {
+            return $next($request);
+        }
+        else{
+            return redirect('/');
+        }
     }
 }

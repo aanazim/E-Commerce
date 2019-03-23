@@ -63,3 +63,9 @@ Auth::routes();
 
 
 
+
+
+/*Route::get('/select', function(){
+	$results = DB::select("SELECT * FROM products ");
+	return $results;
+});*/
